@@ -1,0 +1,63 @@
+{
+  "model_name": "Logistic Regression",
+  "comparison": {
+    "Logistic Regression": {
+      "accuracy": 98.18,
+      "precision": 98.12,
+      "recall": 97.13,
+      "f1_score": 97.62
+    },
+    "Multinomial Naive Bayes": {
+      "accuracy": 96.8,
+      "precision": 96.58,
+      "recall": 95.05,
+      "f1_score": 95.81
+    }
+  },
+  "accuracy": 98.18,
+  "precision": 98.12,
+  "recall": 97.13,
+  "f1_score": 97.62,
+  "train_samples": 14476,
+  "test_samples": 3620,
+  "class_distribution": {
+    "safe": 11124,
+    "phishing": 6972
+  },
+  "confusion_matrix": {
+    "true_negatives": 2199,
+    "false_positives": 26,
+    "false_negatives": 40,
+    "true_positives": 1355
+  },
+  "classification_report": {
+    "Safe": {
+      "precision": 0.9821348816435909,
+      "recall": 0.988314606741573,
+      "f1-score": 0.9852150537634409,
+      "support": 2225.0
+    },
+    "Phishing": {
+      "precision": 0.9811730629978277,
+      "recall": 0.9713261648745519,
+      "f1-score": 0.9762247838616714,
+      "support": 1395.0
+    },
+    "accuracy": 0.981767955801105,
+    "macro avg": {
+      "precision": 0.9816539723207093,
+      "recall": 0.9798203858080625,
+      "f1-score": 0.9807199188125562,
+      "support": 3620.0
+    },
+    "weighted avg": {
+      "precision": 0.981764236060486,
+      "recall": 0.981767955801105,
+      "f1-score": 0.9817505713012948,
+      "support": 3620.0
+    }
+  },
+  "security_notes": {
+    "false_negative_risk": "In email cybersecurity, False Negatives (FN) represent the highest risk: a malicious email is delivered to the user inbox labelled as 'Safe'. Our feature engineering deliberately balances precision and recall to minimize FN while maintaining low FP alarm fatigue."
+  }
+}

@@ -1,0 +1,53 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Pytest and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Operating system and IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+temp/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Model training outputs and temporary files
+
+# Keep required model files unless they are too large or sensitive.
+
+# Add specific temporary model files here if necessary.

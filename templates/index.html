@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PhishGuard AI — Intelligent Phishing Email Detection System powered by Machine Learning and multi-signal feature extraction.">
+    <title>PhishGuard AI — Intelligent Phishing Email Detection System</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <!-- Top Cyber Accent Line -->
+    <div class="cyber-accent-bar"></div>
+
+    <!-- Navigation Bar -->
+    <header class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-brand">
+                <div class="brand-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                        <path d="m9 12 2 2 4-4"/>
+                    </svg>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">PhishGuard<span class="brand-ai">AI</span></span>
+                    <span class="brand-sub">Email Threat Defense</span>
+                </div>
+            </a>
+
+            <nav class="nav-links">
+                <a href="#hero" class="nav-link active">Home</a>
+                <a href="#analyzer" class="nav-link">Analyze Email</a>
+                <a href="#performance" class="nav-link">Model Performance</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+
+            <div class="nav-status">
+                <span class="status-indicator"></span>
+                <span class="status-label">Model v1.0 Active</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section" id="hero">
+            <div class="hero-glow"></div>
+            <div class="container hero-container">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    <span>Machine Learning Phishing Protection</span>
+                </div>
+                <h1 class="hero-title">Stay One Step Ahead of Phishing.</h1>
+                <p class="hero-description">
+                    Analyze suspicious email content using machine learning and identify warning signs before interacting with a potentially malicious message.
+                </p>
+
+                <div class="hero-actions">
+                    <a href="#analyzer" class="btn btn-primary btn-glow" id="hero-analyze-btn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        Analyze an Email
+                    </a>
+                    <a href="#performance" class="btn btn-secondary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="20" x2="18" y2="10"></line>
+                            <line x1="12" y1="20" x2="12" y2="4"></line>
+                            <line x1="6" y1="20" x2="6" y2="14"></line>
+                        </svg>
+                        View ML Metrics
+                    </a>
+                </div>
+
+                <!-- Stats Highlight Grid -->
+                <div class="hero-stats-grid">
+                    <div class="stat-pill">
+                        <span class="stat-num">98.2%</span>
+                        <span class="stat-lbl">Detection Accuracy</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-num">18,000+</span>
+                        <span class="stat-lbl">Trained Email Corpus</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-num">Hybrid</span>
+                        <span class="stat-lbl">TF-IDF + URL Heuristics</span>
+                    </div>
+                    <div class="stat-pill">
+                        <span class="stat-num">Zero Log</span>
+                        <span class="stat-lbl">Privacy First</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Email Analysis Section -->
+        <section class="analyzer-section" id="analyzer">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Email Security Inspection</h2>
+                    <p class="section-subtitle">
+                        Paste suspicious email headers, subject lines, or message bodies below to evaluate risk signals and predict legitimacy.
+                    </p>
+                </div>
+
+                <div class="analyzer-card">
+                    <!-- Sample Injection Bar -->
+                    <div class="sample-actions-bar">
+                        <span class="sample-label">Quick Test Samples:</span>
+                        <div class="sample-buttons">
+                            <button type="button" class="btn btn-sample btn-sample-phishing" id="sample-phishing-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                                    <line x1="12" y1="9" x2="12" y2="13"/>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                </svg>
+                                Sample Phishing Email
+                            </button>
+                            <button type="button" class="btn btn-sample btn-sample-safe" id="sample-safe-btn">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                    <path d="m9 12 2 2 4-4"/>
+                                </svg>
+                                Sample Safe Email
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Email Input Form -->
+                    <form id="email-analysis-form" class="analysis-form">
+                        <div class="textarea-wrapper">
+                            <textarea 
+                                id="email-text-input" 
+                                name="email_text"
+                                placeholder="Paste the complete email content here, including subject line, body text, and links...&#10;&#10;Example:&#10;Subject: Action Required: Your Account Has Been Suspended!&#10;Dear Customer, please verify your credentials immediately at http://192.168.1.1/update to prevent permanent closure."
+                                rows="8"
+                                maxlength="50000"
+                                required
+                            ></textarea>
+                            <div class="textarea-footer">
+                                <div class="privacy-note">
+                                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                                    </svg>
+                                    <span>Emails are never stored, logged, or forwarded.</span>
+                                </div>
+                                <div class="char-counter">
+                                    <span id="char-count">0</span> / 50,000 characters
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary btn-analyze" id="analyze-submit-btn">
+                                <span class="btn-text">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                                    </svg>
+                                    Analyze Email
+                                </span>
+                            </button>
+                            <button type="button" class="btn btn-outline" id="clear-input-btn">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="6" x2="6" y2="18"/>
+                                    <line x1="6" y1="6" x2="18" y2="18"/>
+                                </svg>
+                                Clear
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- Loading State Indicator -->
+                    <div class="loading-state" id="loading-state" style="display: none;">
+                        <div class="cyber-spinner">
+                            <div class="spinner-ring"></div>
+                            <div class="spinner-core">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <p class="loading-title">Scanning Email Content...</p>
+                        <p class="loading-step" id="loading-step-text">Extracting structural URL patterns and evaluating ML model...</p>
+                    </div>
+
+                    <!-- Error Alert Box -->
+                    <div class="error-alert" id="error-alert" style="display: none;">
+                        <div class="error-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="12"/>
+                                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                            </svg>
+                        </div>
+                        <div class="error-message" id="error-message-text"></div>
+                    </div>
+
+                    <!-- Dynamic Prediction Results Card -->
+                    <div class="result-card-wrapper" id="result-wrapper" style="display: none;">
+                        <div class="result-card" id="result-card">
+                            <!-- Card Header: Classification Banner -->
+                            <div class="result-header">
+                                <div class="result-badge-group">
+                                    <div class="result-icon-box" id="result-icon-box">
+                                        <!-- Dynamic icon injected by JS -->
+                                    </div>
+                                    <div class="result-title-box">
+                                        <div class="classification-tag" id="classification-tag">CLASSIFICATION RESULT</div>
+                                        <h3 class="classification-label" id="result-label">Analyzing...</h3>
+                                    </div>
+                                </div>
+                                <div class="risk-badge-box">
+                                    <span class="risk-pill" id="result-risk-pill">Risk: High</span>
+                                </div>
+                            </div>
+
+                            <!-- Confidence Meter -->
+                            <div class="result-confidence-box">
+                                <div class="confidence-header">
+                                    <span class="conf-title">Model Confidence Estimate</span>
+                                    <span class="conf-value" id="result-confidence-val">--%</span>
+                                </div>
+                                <div class="confidence-bar-bg">
+                                    <div class="confidence-bar-fill" id="confidence-bar-fill" style="width: 0%;"></div>
+                                </div>
+                                <div class="conf-disclaimer">
+                                    Confidence scores reflect statistical similarity to training patterns and are not absolute guarantees.
+                                </div>
+                            </div>
+
+                            <!-- Detected Red Flags / Threat Indicators -->
+                            <div class="result-section red-flags-section" id="red-flags-section">
+                                <h4 class="section-subheading">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/>
+                                        <line x1="4" y1="22" x2="4" y2="15"/>
+                                    </svg>
+                                    Detected Warning Signs & Risk Indicators
+                                </h4>
+                                <ul class="flags-list" id="flags-list">
+                                    <!-- Injected by script.js -->
+                                </ul>
+                            </div>
+
+                            <!-- Analysis Explanation -->
+                            <div class="result-section explanation-section">
+                                <h4 class="section-subheading">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <line x1="12" y1="16" x2="12" y2="12"/>
+                                        <line x1="12" y1="8" x2="12.01" y2="8"/>
+                                    </svg>
+                                    Threat Assessment Analysis
+                                </h4>
+                                <p class="explanation-text" id="explanation-text">
+                                    --
+                                </p>
+                            </div>
+
+                            <!-- Safety Recommendations -->
+                            <div class="result-section recommendations-section">
+                                <h4 class="section-subheading">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                                        <path d="m9 12 2 2 4-4"/>
+                                    </svg>
+                                    Recommended Action Plan
+                                </h4>
+                                <ul class="recommendations-list" id="recommendations-list">
+                                    <!-- Injected by script.js -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Model Performance Section -->
+        <section class="performance-section" id="performance">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Verified Benchmarks</div>
+                    <h2 class="section-title">Model Performance & Evaluation</h2>
+                    <p class="section-subtitle">
+                        Trained on 18,096 emails from authentic security repositories with stratified 80/20 train-test evaluation.
+                    </p>
+                </div>
+
+                <!-- Metrics Counter Cards -->
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-icon accuracy-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="m9 12 2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <div class="metric-val" id="metric-accuracy">98.18%</div>
+                        <div class="metric-label">Overall Accuracy</div>
+                        <div class="metric-desc">Correctly classified test emails</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon precision-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                            </svg>
+                        </div>
+                        <div class="metric-val" id="metric-precision">98.12%</div>
+                        <div class="metric-label">Phishing Precision</div>
+                        <div class="metric-desc">Minimizes false alarms (FP)</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon recall-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                            </svg>
+                        </div>
+                        <div class="metric-val" id="metric-recall">97.13%</div>
+                        <div class="metric-label">Phishing Recall</div>
+                        <div class="metric-desc">Catches dangerous threats</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-icon f1-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="16"/>
+                                <line x1="8" y1="12" x2="16" y2="12"/>
+                            </svg>
+                        </div>
+                        <div class="metric-val" id="metric-f1">97.62%</div>
+                        <div class="metric-label">Harmonic F1-Score</div>
+                        <div class="metric-desc">Balanced classifier strength</div>
+                    </div>
+                </div>
+
+                <!-- Confusion Matrix & Evaluation Analysis -->
+                <div class="performance-details-grid">
+                    <!-- Left: Confusion Matrix Image Card -->
+                    <div class="cm-display-card">
+                        <h3 class="card-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect width="18" height="18" x="3" y="3" rx="2" ry="2"/>
+                                <line x1="3" y1="9" x2="21" y2="9"/>
+                                <line x1="9" y1="21" x2="9" y2="9"/>
+                            </svg>
+                            Confusion Matrix Visualization
+                        </h3>
+                        <div class="cm-img-container">
+                            <img src="/confusion_matrix.png" alt="PhishGuard AI Confusion Matrix" class="cm-img" id="cm-image" loading="lazy">
+                        </div>
+                        <div class="cm-caption">
+                            Test evaluation on 3,620 held-out samples (2,225 Safe, 1,395 Phishing).
+                        </div>
+                    </div>
+
+                    <!-- Right: Evaluation Breakdown & Threat Dynamics -->
+                    <div class="cm-breakdown-card">
+                        <h3 class="card-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                            Cybersecurity Threat Matrix Breakdown
+                        </h3>
+
+                        <div class="cm-stats-table">
+                            <div class="cm-stat-row">
+                                <div class="cm-stat-lbl">
+                                    <span class="dot dot-green"></span>
+                                    <strong>True Negatives (TN):</strong> Legitimate emails correctly identified as Safe
+                                </div>
+                                <div class="cm-stat-val" id="cm-tn-val">2,199 (98.8%)</div>
+                            </div>
+                            <div class="cm-stat-row">
+                                <div class="cm-stat-lbl">
+                                    <span class="dot dot-green"></span>
+                                    <strong>True Positives (TP):</strong> Malicious phishing emails successfully intercepted
+                                </div>
+                                <div class="cm-stat-val" id="cm-tp-val">1,355 (97.1%)</div>
+                            </div>
+                            <div class="cm-stat-row">
+                                <div class="cm-stat-lbl">
+                                    <span class="dot dot-amber"></span>
+                                    <strong>False Positives (FP):</strong> Legitimate emails flagged as phishing (nuisance)
+                                </div>
+                                <div class="cm-stat-val" id="cm-fp-val">26 (1.2%)</div>
+                            </div>
+                            <div class="cm-stat-row high-risk-row">
+                                <div class="cm-stat-lbl">
+                                    <span class="dot dot-red"></span>
+                                    <strong>False Negatives (FN):</strong> Phishing emails misclassified as Safe (CRITICAL)
+                                </div>
+                                <div class="cm-stat-val" id="cm-fn-val">40 (2.9%)</div>
+                            </div>
+                        </div>
+
+                        <!-- Security Context Note -->
+                        <div class="security-risk-callout">
+                            <div class="callout-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/>
+                                    <line x1="12" y1="9" x2="12" y2="13"/>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                                </svg>
+                            </div>
+                            <div class="callout-body">
+                                <strong>Why False Negatives Matter Most in Security:</strong>
+                                <p>
+                                    In spam/phishing defense, a <em>False Negative</em> delivers a credential theft or malware payload straight into the victim's inbox. Our hybrid model was tuned to maximize Phishing Recall (97.1%) while preserving a minimal 1.2% false alarm rate.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section class="how-it-works-section" id="how-it-works">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-badge">Pipeline Architecture</div>
+                    <h2 class="section-title">How PhishGuard AI Works</h2>
+                    <p class="section-subtitle">
+                        A multi-layer machine learning inspection pipeline combining lexical analysis and domain heuristics.
+                    </p>
+                </div>
+
+                <div class="steps-grid">
+                    <div class="step-card">
+                        <div class="step-num">01</div>
+                        <h4 class="step-title">Input Sanitization</h4>
+                        <p class="step-desc">
+                            The submitted text is normalized, HTML entities and tags are stripped, and whitespace is standardized to prevent obfuscation.
+                        </p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-num">02</div>
+                        <h4 class="step-title">URL & Domain Heuristics</h4>
+                        <p class="step-desc">
+                            Links are extracted and scanned for raw IP addresses, URL shorteners, excessive subdomains, and suspicious Top-Level Domains (TLDs).
+                        </p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-num">03</div>
+                        <h4 class="step-title">TF-IDF Vectorization</h4>
+                        <p class="step-desc">
+                            Sublinear TF-IDF extracts 8,000 unigrams and bigrams, capturing psychological urgency, deceptive phrases, and account recovery triggers.
+                        </p>
+                    </div>
+
+                    <div class="step-card">
+                        <div class="step-num">04</div>
+                        <h4 class="step-title">Classifier & Risk Scoring</h4>
+                        <p class="step-desc">
+                            Logistic Regression computes statistical class probabilities, and a heuristic rule-engine compiles human-readable red flags and safety advice.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section" id="about">
+            <div class="container">
+                <div class="about-card">
+                    <div class="about-content">
+                        <div class="section-badge">About Project</div>
+                        <h3 class="about-title">Academic Cybersecurity Project</h3>
+                        <p class="about-text">
+                            <strong>PhishGuard AI</strong> is an end-to-end Machine Learning web application designed to demonstrate automated social engineering threat analysis. It addresses the limitations of static signature-based email filters by combining n-gram NLP representations with behavioral URL risk signals.
+                        </p>
+                        <div class="about-features-list">
+                            <div class="about-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>Trained on genuine security research datasets (Nazario, Enron-Spam, SpamAssassin)</span>
+                            </div>
+                            <div class="about-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>Zero external URL crawling — safely evaluates links without risking payload execution</span>
+                            </div>
+                            <div class="about-feature-item">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="20 6 9 17 4 12"/>
+                                </svg>
+                                <span>Zero data retention policy — analyzed text is processed in-memory and immediately discarded</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="brand-name">PhishGuard<span class="brand-ai">AI</span></span>
+                    <span class="footer-tagline">Intelligent Phishing Email Detection System</span>
+                </div>
+                <div class="footer-badge">
+                    <span>Flask 3.0 • Scikit-Learn 1.9 • Vanilla JS</span>
+                </div>
+            </div>
+
+            <div class="footer-disclaimer">
+                <strong>Educational Project Disclaimer:</strong> This tool provides an educational risk assessment and is not a replacement for professional email security. Predictions may be incorrect. Never share passwords, OTPs, or other confidential information.
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 PhishGuard AI. Designed for Machine Learning & Cybersecurity Demonstration.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Frontend Controller Script -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
